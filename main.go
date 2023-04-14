@@ -14,7 +14,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
-const jwtSecret = "T1PCgUJJcJhp5FMwF5Fu3YcGFsGva3EIdG5zHxfKqSdF/Um8PQXDWaQ1aVphbwcl7aNTGfiDLHnhVqFCv2XIHA=="
+const jwtSecret = "{YOUR_JWT_SECRET_KEY}"
 
 func main() {
 	if err := run(); err != nil {
