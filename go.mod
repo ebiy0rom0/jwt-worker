@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/golang-jwt/jwt/v5 v5.0.0-rc.2
 	github.com/labstack/echo/v4 v4.10.2
+	github.com/pelletier/go-toml/v2 v2.0.7
 )
 
 require (

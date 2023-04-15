@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"jwt-worker/config"
 	"net/http"
 	"os"
 	"strings"
@@ -13,8 +14,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
-
-const jwtSecret = "{YOUR_JWT_SECRET_KEY}"
 
 func main() {
 	if err := run(); err != nil {
@@ -82,7 +81,7 @@ func decodeToken(tokenString string) error {
 func verifyToken(tokenString string) (*jwt.Token, error) {
 	// Define the key to use for signing the token
 	keyFunc := func(token *jwt.Token) (interface{}, error) {
-		return []byte(jwtSecret), nil
+		return []byte(config.C.Supabase.Secret), nil
 	}
 
 	// Parse the token
