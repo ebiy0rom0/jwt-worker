@@ -30,10 +30,12 @@ func run() error {
 		tokenString := strings.TrimPrefix(h, "Bearer ")
 
 		if err := decodeToken(tokenString); err != nil {
+			c.String(http.StatusUnauthorized, "invalid jwt token format")
 			return err
 		}
 		token, err := verifyToken(tokenString)
 		if err != nil {
+			c.String(http.StatusUnauthorized, "unverified token")
 			return err
 		}
 
