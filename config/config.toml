@@ -1,0 +1,2 @@
+[supabase]
+  secret="{YOUR_SUPABASE_JWT_SECRET}"
